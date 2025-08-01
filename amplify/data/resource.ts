@@ -11,7 +11,7 @@ const schema = a.schema({
    .model({
      content: a.string(),
    })
-   .authorization((allow) => [allow.authenticated()]), // 変更
+   .authorization((allow) => [allow.authenticated()]),
 });
 
 export type Schema = ClientSchema<typeof schema>;
@@ -19,8 +19,7 @@ export type Schema = ClientSchema<typeof schema>;
 export const data = defineData({
  schema,
  authorizationModes: {
-   defaultAuthorizationMode: "userPool", // 変更
-   // API 認証の記述を削除
+   defaultAuthorizationMode: "userPool",
  },
 });
 
